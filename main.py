@@ -21,7 +21,9 @@ async def main() -> None:
 
     config: Config = load_config()
 
-    bot = Bot(token=config.tg_bot.token)
+    bot = Bot(
+        token=config.tg_bot.token,
+        default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
     #Настраиваем кнопки меню
